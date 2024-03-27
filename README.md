@@ -6,13 +6,19 @@ In this assignment, you will create a simple inventory management system which a
 
 ## Level 1 - Mandatory
 
-1. Create class `Item`, which has name (readonly), quantity, and created date, which are private. Amount of each item cannot be negative. Provide the following features:
+- [x] Create class `Item`
+- [x] which has a variable name (readonly)
+- [x] quantity, and
+- [x] created date, which are private.
+- [x] Amount of each item cannot be negative.
 
-- Contructor to take parameters of name, quantity, and created date (optional, if not set, it will be current date).
+Provide the following features:
 
-2. Create class `Store` with the following properties and methods:
+- [x] Contructor to take parameters of name, quantity, and created date (optional, if not set, it will be current date).
 
-- A collection to store items, which is private. Initially, this will be an empty collection.
+- [x] Create class `Store` with the following properties and methods:
+
+- [x] A collection to store items, which is private. Initially, this will be an empty collection.
 - Methods to add/delete one item to the collection. Do not allow to add items with same name to the store
 - Method `GetCurrentVolume` to compute the total amount of items in the store
 - Method `FindItemByName` to find an item by name.
