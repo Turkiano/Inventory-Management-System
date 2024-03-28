@@ -16,22 +16,54 @@ namespace sda_onsite_2_inventory_management.src
     public class Store
     {
         private readonly string _name;
+        private readonly int _maximumCapacity;
+
         private List<Item> _items;
 
-        public Store(string name)
+        public Store(string name, int maximumCapacity)
         {
             _name = name;
+            _maximumCapacity = maximumCapacity;
             _items = [];
+        }
+
+        public int GetCurentVolume()
+        {
+            int totalAmount = 0;
+            foreach (Item item in _items)
+            {
+                totalAmount += item.GetQuantity();
+            }
+            return totalAmount;
+        }
+
+        public int GetMaximumCapacity()
+        {
+            return _maximumCapacity;
         }
         public List<Item> GetItems()
         {
             return _items;
         }
+
+
+
+
         // _items = [{name: "lapop", quantity: 200, date: "2024-03-24" }, {name: "phone", quantity: 200, date: "2024-03-24" }]
         // newItem = {name: "laptop", quantity: 200, date: "2024-03-24" }
 
         public bool AddItems(Item newItem)
         {
+            int availabeSpace = GetMaximumCapacity() - GetCurentVolume();
+            Console.WriteLine($"availableSpace: {availabeSpace}");
+
+            if (availabeSpace < newItem.GetQuantity())
+            {
+                throw new Exception("Get A larager store");
+            }
+
+
+
             // check whether you have the item with same name or not 
             // use Find() to find the item that has the name equal to the name of new item 
             // Item foundItem = _items.Find((item) => item.GetName() == newItem.GetName() );  
@@ -79,20 +111,22 @@ namespace sda_onsite_2_inventory_management.src
 
         }
 
-        // public Dictionary<char, List<Item>> GroupByName(List<Item> items) {
+        public List<Item> SortByName(StoreOrder order)
+        {
 
-        //     Dictionary<char , List<Item>> groups = new();
+            if (order == StoreOrder.DESC)
+            {
 
-        //     foreach (var item in items)
-        //     {
-        //         if (!groups.ContainsKey(item.GetName()[0])){
-        //             groups.Add(item.GetName()[0], []);
-        //         }
-        //         groups[item.GetName() [0]].Add(item);
-        //     }
+                return _items.OrderByDescending(item => item.GetName()).ToList();
+            }
+            if (order == StoreOrder.ASC)
+            {
 
-        //     return groups;
-        // }
+                return _items.OrderBy(item => item.GetName()).ToList();
+            }
+
+            return _items;
+        }
 
     }
 

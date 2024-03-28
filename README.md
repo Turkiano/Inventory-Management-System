@@ -7,10 +7,10 @@ In this assignment, you will create a simple inventory management system which a
 ## Level 1 - Mandatory
 
 - [x] Create class `Item`
-- [x] which has a variable name (readonly)
-- [x] quantity, and
-- [x] created date, which are private.
-- [x] Amount of each item cannot be negative.
+- [x] which has a variable name and (readonly)
+- [x] Quantity Variable as Private
+- [x] Created date, which are private.
+- [ ] Amount of each item cannot be negative.
 
 Provide the following features:
 
@@ -21,8 +21,8 @@ Provide the following features:
 - [x] A collection to store items, which is private. Initially, this will be an empty collection.
 - [x] Methods to add/delete one item to the collection. Do not allow to add items with same name to the store
 - [x] Method `GetCurrentVolume` to compute the total amount of items in the store
-- Method `FindItemByName` to find an item by name.
-- Method `SortByNameAsc`to get the sorted collection by name in ascending order.
+- [x] Method `FindItemByName` to find an item by name.
+- [x] Method `SortByNameAsc`to get the sorted collection by name in ascending order.
 
 ```
 // items example - You do not need to follow exactly the same
@@ -47,8 +47,8 @@ var sunscreen = new Item("Sunscreen", 8);
 
 Class `Store` should have the following features:
 
-- Maximum capacity , which is total amount of items allowed in the store, and contructor should also take an integer value as the maximum capacity of the inventory.
-- Modify the add method to not overload the capacity
+- [x] Maximum capacity , which is total amount of items allowed in the store, and contructor should also take an integer value as the maximum capacity of the inventory.
+- [x] Modify the add method to not overload the capacity
 
 ## Level 3 - Extra feature: Complex functionalities
 
