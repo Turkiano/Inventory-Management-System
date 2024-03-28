@@ -1,4 +1,4 @@
-﻿using SDA_csharp_inventory_management.src;
+﻿using InventoryManagement.src;
 using sda_onsite_2_inventory_management.src;
 
 internal class Program
@@ -10,7 +10,7 @@ internal class Program
 
         Item choocolate = new("Galaxxy Crispy", 1000, new DateTime(2023, 2, 1));
         Item cookies = new("Choocolate chips", 2000, new DateTime(2024, 2, 4));
-        Item cookies2 = new("Choocolate chips", 2000, DateTime.Now);
+        Item cookies2 = new("Choocolate chips 2", 2000, DateTime.Now);
 
 
 
@@ -27,6 +27,14 @@ internal class Program
         {
             Console.WriteLine($"NAME ={item.GetName()} Created At = {item.GetCreatedAt()} Quantity = {item.GetQuantity()}");
         }
+        // we call the method removeItems 
+        var deleted = store.RemoveItems(cookies2);
+        if (deleted == true)
+        {
+            Console.WriteLine($"hey we remove item successfully");
+
+        }
+
 
     }
 }

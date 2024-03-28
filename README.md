@@ -19,8 +19,8 @@ Provide the following features:
 - [x] Create class `Store` with the following properties and methods:
 
 - [x] A collection to store items, which is private. Initially, this will be an empty collection.
-- Methods to add/delete one item to the collection. Do not allow to add items with same name to the store
-- Method `GetCurrentVolume` to compute the total amount of items in the store
+- [x] Methods to add/delete one item to the collection. Do not allow to add items with same name to the store
+- [x] Method `GetCurrentVolume` to compute the total amount of items in the store
 - Method `FindItemByName` to find an item by name.
 - Method `SortByNameAsc`to get the sorted collection by name in ascending order.
 

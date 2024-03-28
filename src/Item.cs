@@ -1,6 +1,6 @@
 
 
-namespace SDA_csharp_inventory_management.src
+namespace InventoryManagement.src
 {
 
 
