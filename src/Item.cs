@@ -19,7 +19,27 @@ namespace InventoryManagement.src
     public class Item
     {
         private readonly string _name;
-        private readonly int _quantity;
+        private int _quantity;
+        public int Quantity
+
+        {
+            get
+            {
+                return _quantity;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Quanitiy can not be negative");
+
+                }
+                else
+                {
+                    _quantity = value;
+                }
+            }
+        }
         private readonly DateTime _createdAt;
 
 
@@ -27,9 +47,14 @@ namespace InventoryManagement.src
         public Item(string name, int quantity, DateTime createDate)
         {
             _name = name;
-            _quantity = quantity;
+            Quantity = quantity;
             _createdAt = createDate;
 
+        }
+
+        public DateTime SetCreatedAt() //this is the set method for _CreatedBy
+        {   //validation
+            return _createdAt;
         }
 
         public string GetName() //this is the get method for _name

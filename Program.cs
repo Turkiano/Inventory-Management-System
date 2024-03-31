@@ -9,7 +9,7 @@ internal class Program
     {
         Store store = new Store("Tamimi", 5000);
 
-        Item choocolate = new("Galaxxy Crispy", 1000, new DateTime(2023, 2, 1));
+        Item choocolate = new("Galaxxy Crispy", 20, new DateTime(2023, 2, 1));
         Item cookies = new("Choocolate chips", 2000, new DateTime(2024, 2, 4));
         Item cookies2 = new("Choocolate chips 2", 2000, DateTime.Now);
 

@@ -10,7 +10,7 @@ In this assignment, you will create a simple inventory management system which a
 - [x] which has a variable name and (readonly)
 - [x] Quantity Variable as Private
 - [x] Created date, which are private.
-- [ ] Amount of each item cannot be negative.
+- [x] Amount of each item cannot be negative.
 
 Provide the following features:
 
