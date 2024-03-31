@@ -20,6 +20,8 @@ namespace InventoryManagement.src
     {
         private readonly string _name;
         private int _quantity;
+        private readonly DateTime _createdAt;
+
         public int Quantity
 
         {
@@ -40,7 +42,8 @@ namespace InventoryManagement.src
                 }
             }
         }
-        private readonly DateTime _createdAt;
+
+
 
 
         //Contructor to take parameters of name, quantity, and created date (optional, if not set, it will be current date).
@@ -64,7 +67,7 @@ namespace InventoryManagement.src
 
         public DateTime GetCreatedAt() //this is the get method for _CreatedBy
         {
-            return _createdAt;
+            return SetCreatedAt();
         }
 
         public int GetQuantity() //this is the get method for _quantity

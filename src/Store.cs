@@ -7,8 +7,7 @@
 
 */
 
-using System.Text.RegularExpressions;
-using Microsoft.VisualBasic;
+
 using InventoryManagement.src;
 
 namespace StoreOrderPage.src
@@ -19,6 +18,24 @@ namespace StoreOrderPage.src
         private readonly int _maximumCapacity;
 
         private List<Item> _items;
+
+        public Dictionary<string, List<Item>> GroupByDate()
+        {
+            var grouped = _items.GroupBy(item =>
+            {
+                double timeDifferenceInDays = (DateTime.Now - item.GetCreatedAt()).TotalDays;
+                if (timeDifferenceInDays < 90)
+                {
+                    return "new";
+                }
+                else
+                {
+                    return "old";
+                }
+            }).ToDictionary(group => group.Key, group => group.ToList());
+
+            return grouped;
+        }
 
         public Store(string name, int maximumCapacity)
         {
@@ -106,7 +123,7 @@ namespace StoreOrderPage.src
             }
             else
             {
-                throw new ArgumentException($"we have this  product name {foundItem.GetName()}");
+                throw new ArgumentException($"we have this  product name {foundItem?.GetName()}");
             }
 
         }
