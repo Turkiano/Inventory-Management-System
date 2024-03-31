@@ -1,11 +1,11 @@
 
-namespace sda_onsite_2_inventory_management.src
+namespace StoreOrderPage.src
 
 {
     public enum StoreOrder
     {
         DESC,
-        ASC 
-        
+        ASC
+
     }
 }

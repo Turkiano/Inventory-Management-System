@@ -1,6 +1,6 @@
 ﻿using System.Xml.XPath;
 using InventoryManagement.src;
-using sda_onsite_2_inventory_management.src;
+using StoreOrderPage.src;
 
 internal class Program
 {

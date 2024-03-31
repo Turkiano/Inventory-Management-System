@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
 using InventoryManagement.src;
 
-namespace sda_onsite_2_inventory_management.src
+namespace StoreOrderPage.src
 {
     public class Store
     {
@@ -106,7 +106,7 @@ namespace sda_onsite_2_inventory_management.src
             }
             else
             {
-                throw new ArgumentException($"we have this  product name {foundItem?.GetName()}");
+                throw new ArgumentException($"we have this  product name {foundItem.GetName()}");
             }
 
         }

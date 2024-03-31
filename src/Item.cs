@@ -47,7 +47,7 @@ namespace InventoryManagement.src
         public Item(string name, int quantity, DateTime createDate)
         {
             _name = name;
-            Quantity = quantity;
+            _quantity = quantity;
             _createdAt = createDate;
 
         }
