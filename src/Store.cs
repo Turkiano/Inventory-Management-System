@@ -24,7 +24,7 @@ namespace StoreOrderPage.src
             var grouped = _items.GroupBy(item =>
             {
                 double timeDifferenceInDays = (DateTime.Now - item.GetCreatedAt()).TotalDays;
-                if (timeDifferenceInDays < 90)
+                if (timeDifferenceInDays < 30)
                 {
                     return "new";
                 }
@@ -62,6 +62,8 @@ namespace StoreOrderPage.src
         {
             return _items;
         }
+
+
 
 
 
@@ -144,6 +146,17 @@ namespace StoreOrderPage.src
 
             return _items;
         }
+
+        // public Dictionary<char, List<Item>> GroupbyName(List<Item>items)
+        // {
+        //     Dictionary<char, List<Item>> groups = new();
+        //     foreach (var item in items) {
+        //         groups.Add(item.GetName() [0], []);
+        //     }
+
+        //     return groups;
+
+        // }
 
     }
 

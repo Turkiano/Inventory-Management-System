@@ -7,6 +7,8 @@ internal class Program
 
     private static void Main(string[] args)
     {
+
+
         Store store = new Store("Tamimi", 5000);
 
         Item choocolate = new("Galaxxy Crispy", 20, new DateTime(2023, 2, 1));
@@ -24,11 +26,11 @@ internal class Program
         var shampoo = new Item("Shampoo", 40, new DateTime(2023, 9, 1));
         var toothbrush = new Item("Toothbrush", 50, new DateTime(2023, 10, 1));
 
-        var coffee = new Item("Coffee", 20, new DateTime(2024, 2, 1));
-        var sandwich = new Item("Sandwich", 15, new DateTime(2024, 3, 4));
-        var batteries = new Item("Batteries", 10, new DateTime(2024, 2, 19));
-        var umbrella = new Item("Umbrella", 5, new DateTime(2024, 2, 21));
-        var sunscreen = new Item("Sunscreen", 8, new DateTime(2024, 2, 16));
+        var coffee = new Item("Coffee", 20, new DateTime(2024, 4, 1));
+        var sandwich = new Item("Sandwich", 15, new DateTime(2024, 4, 4));
+        var batteries = new Item("Batteries", 10, new DateTime(2024, 4, 19));
+        var umbrella = new Item("Umbrella", 5, new DateTime(2024, 4, 21));
+        var sunscreen = new Item("Sunscreen", 8, new DateTime(2024, 4, 16));
 
 
         //   to get the sorted collection by name in ascending order
@@ -62,6 +64,20 @@ internal class Program
 
 
         Console.WriteLine("Count After:" + items.Count);
+        Console.WriteLine("======================");
+
+        var groupByDate = store.GroupByDate();
+        foreach (var group in groupByDate)
+        {
+            Console.WriteLine($"{group.Key} Items:");
+            foreach (var item in group.Value)
+            {
+                Console.WriteLine($"NAME ={item.GetName()} Created At = {item.GetCreatedAt()}");
+            }
+        }
+        Console.WriteLine("======================");
+
+
         int page = 1;
         int itemsPerPage = 10;
         int currentPage = (page - 1) * itemsPerPage;
@@ -79,11 +95,11 @@ internal class Program
 
 
         Console.WriteLine("======================");
-        foreach (Item item in items)
-        {
-            Console.WriteLine($"NAME ={item.GetName()} Created At = {item.GetCreatedAt()} Quantity = {item.GetQuantity()}");
+        // foreach (Item item in items)
+        // {
+        //     Console.WriteLine($"NAME ={item.GetName()} Created At = {item.GetCreatedAt()} Quantity = {item.GetQuantity()}");
 
-        }
+        // }
         Console.WriteLine("======================");
 
         // we call the method removeItems 
@@ -95,14 +111,5 @@ internal class Program
         }
 
 
-        var groupByDate = store.GroupByDate();
-        foreach (var group in groupByDate)
-        {
-            Console.WriteLine($"{group.Key} Items:");
-            foreach (var item in group.Value)
-            {
-                Console.WriteLine($" - {item.GetName}, Created: {item.GetCreatedAt().ToShortDateString()}");
-            }
-        }
     }
 }
