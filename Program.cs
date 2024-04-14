@@ -65,7 +65,34 @@ internal class Program
 
         Console.WriteLine("Count After:" + items.Count);
         Console.WriteLine("======================");
+        Console.WriteLine("LINQ | Grouping by name using method syntax");
 
+        var groups = items.GroupBy(Item => Item.GetName()[0]);
+        foreach (var item in groups)
+        {
+            Console.WriteLine("-------------------------");
+            Console.WriteLine($"Letter: {item.Key}");
+            foreach (var b in item)
+            {
+                Console.WriteLine($"Item: {b.GetName()}");
+            }
+        }
+        Console.WriteLine("======================");
+        Console.WriteLine("======================");
+
+        // Console.WriteLine("LINQ | Grouping by Date using method syntax");
+
+        // var DateGrouping = items.Where(Item => Item.GetCreatedAt());
+        // foreach (var DateGroup in DateGrouping)
+        // {
+        //     Console.WriteLine($"NAME ={DateGroup.GetName()} Created At = {DateGroup.GetCreatedAt()}");
+
+        // }
+
+
+
+
+        //This is the Dictionary method to group item by its date.
         var groupByDate = store.GroupByDate();
         foreach (var group in groupByDate)
         {

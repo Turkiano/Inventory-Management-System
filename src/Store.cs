@@ -74,7 +74,7 @@ namespace StoreOrderPage.src
         public bool AddItems(Item newItem)
         {
             int availabeSpace = GetMaximumCapacity() - GetCurentVolume();
-            Console.WriteLine($"availableSpace: {availabeSpace}");
+            // Console.WriteLine($"availableSpace: {availabeSpace}");
 
             if (availabeSpace < newItem.GetQuantity())
             {
